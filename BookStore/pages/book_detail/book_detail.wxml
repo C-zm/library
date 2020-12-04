@@ -1,0 +1,85 @@
+<view class="detail_swiper">
+    <swiper autoplay circular indicator-dots>
+      <swiper-item wx:for="{{bsrclist}}" wx:key="item" bindtap="handlePrevewImage" data-url="{{item}}">
+        <image mode="widthFix" src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+</view>
+
+
+<view class="b_p_i">
+  <view class="bprice">￥{{book_detail.bprice}}</view>
+  <view class="inventory">库存：{{book_detail.inventory}}</view>
+</view>
+<view class="bname_row">
+  <view class="bname">{{book_detail.bname}}</view>
+  <view class="book_collect" bindtap="handleCollect">
+    <text class="iconfont {{isCollect?'icon-shoucang1':'icon-shoucang'}}"></text>
+    <view class="collect_text">收藏</view>
+  </view>
+</view>
+
+<view class="book_info">
+  <view class="book_info_title">详情信息</view>
+
+  <view class="author">作者：{{book_detail.author}}</view>
+  <view class="time">出版时间：{{book_detail.ontime}}</view>
+  <view class="introduce">简介：
+  <view class="book_info_content" wx:for="{{introduce}}" wx:key="*this" decode="true">
+    <!-- &nbsp;<rich-text nodes="{{item}}"></rich-text> -->
+    <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item}}</text>
+  </view>
+  </view>
+</view>
+
+<view class="comment_info">
+  <view class="comment_info_title">评论</view>
+  <view wx:if="{{comment.length === 0}}">
+    <view class="wu"> 暂无评论，赶紧点击预约评论吧！！</view>
+  </view>
+  <view wx:else>
+    <view class="comment_list" wx:for="{{comment}}" wx:key="cid">
+      <view class="comment_left"><image mode="widthFix" src="{{item.userInfo.usrc?item.userInfo.usrc:'http://img3.imgtn.bdimg.com/it/u=1752304314,1135428807&fm=15&gp=0.jpg'}}"></image></view>
+      <view class="comment_right">
+        <view class="right_top">
+          <view class="uname">{{item.userInfo.uname?item.userInfo.uname:'匿名用户'}}:</view>
+          <view class="ctime">{{item.ctime}}</view>
+        </view>
+        <view class="right_bottom">
+          <view class="detail">{{item.cdetail}}</view>
+          <view  wx:if="{{item.csrc}}" class="csrc_list">
+            <view class="detail_src" wx:for="{{item.csrc}}"  wx:for-item="item1" wx:key="*this">
+              <image mode="widthFix" src="{{item1}}"  bindtap="getBigPhoto" data-csrc="{{item.csrc}}" data-src="{{item1}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="btm_tool">
+  <view class="tool_item">
+    <view class="iconfont icon-kefu"></view>
+    <view>客服</view>
+    <button open-type="contact"></button>
+  </view>
+  <view class="tool_item">
+    <view class="iconfont icon-fenxiang"></view>
+    <view>分享</view>
+    <button open-type="share"></button>
+  </view>
+  <navigator url="/pages/cart/cart" open-type="switchTab" class="tool_item">
+    <view class="iconfont icon-icon-"></view>
+    <view>购物车</view>
+  </navigator>
+  <view class="tool_item btn_cart" bindtap="handleCartAdd">
+    加入购物车
+  </view>
+  <view class="tool_item btn_buy" >
+    <navigator url="/pages/paynow/paynow?bid={{book_detail.bid}}">
+      立即购买
+    </navigator>
+  </view>
+</view>

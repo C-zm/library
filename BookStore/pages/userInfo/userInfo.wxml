@@ -1,0 +1,83 @@
+<view class="user_detail">
+  <form bindsubmit="handleuser">
+    <input hidden name="uid" type="text" value="{{userInfo.uid}}"></input>
+    <view class="before_input">
+      <view class="input_text"> 姓 名：</view>
+      <input name="uname" type="text" value="{{userInfo.uname}}"></input>
+    </view> 
+    <view class="before_input">
+      <view class="input_text" >号 码 ： </view>
+      <input name="uphone" type="text" value="{{userInfo.uphone}}"></input>
+    </view> 
+    <view class="before_input">
+      <view class="input_text" >余 额 ： </view>
+      <input name="account" type="text" value="{{userInfo.account}}"></input>
+    </view> 
+    <view class="before_input">
+      <view class="input_pwd" >密 码 ： </view>
+      <input class="pwd" name="pwd" type="password" value="{{userInfo.pwd}}" disabled="true"></input>
+      
+    </view>  
+  <button class="change_account" type="primary" bindtap="change_account">充值</button>
+  <button class="change_pwd" type="primary" bindtap="change_pwd">修改</button>
+  <button form-type="submit" type="primary">提交</button>
+  </form>
+</view>
+
+
+
+
+<!-- 密码输入框 -->
+<view wx:if='{{showPayPwdInput}}'>
+    <view class='bg_layer'></view>
+    <view wx:if="{{state === 1}}">
+      <view class='input_main'>
+          <view class='input_title'>
+              <view class='input_back' catchtap='hidePayLayer'><text></text></view>
+              <text>修改支付密码</text>
+          </view>
+          <view class='input_tip'><text>请输入当前密码进行验证，验证通过后才可进行修改。</text></view>
+          <view class='input_row' catchtap='getFocus'>
+              <view class='pwd_item' wx:for='{{6}}' wx:key='item' wx:for-index='i'>
+                  <text wx:if='{{pwdVal.length>i}}'></text>
+              </view>
+          </view>
+          <view class='forget_pwd' catchtap='hidePayLayer'>忘记密码</view>
+          <input class='input_control' password type='number' focus='{{payFocus}}' bindinput='inputPwd' maxlength='6'/>
+      </view>
+    </view>
+
+    <view wx:elif="{{state === 2}}">
+      <view class='input_main'>
+          <view class='input_title'>
+              <view class='input_back' catchtap='hidePayLayer'><text></text></view>
+              <text>修改支付密码</text>
+          </view>
+          <view class='input_tip'><text>请输入新密码</text></view>
+          <view class='input_row' catchtap='getFocus'>
+              <view class='pwd_item' wx:for='{{6}}' wx:key='item' wx:for-index='i'>
+                  <text wx:if='{{pwdVal.length>i}}'></text>
+              </view>
+          </view>
+          <view class='forget_pwd' catchtap='hidePayLayer'>忘记密码</view>
+          <input class='input_control' password type='number' focus='{{payFocus}}' bindinput='inputPwd' maxlength='6'/>
+      </view>
+    </view>
+
+    <view wx:elif="{{state === 3}}">
+      <view class='input_main'>
+          <view class='input_title'>
+              <view class='input_back' catchtap='hidePayLayer'><text></text></view>
+              <text>充值中心</text>
+          </view>
+          <view class='input_tip'><text>请输入充值金额：</text></view>
+          <view class='input_row' catchtap='getFocus'>
+            <input placeholder="请确保输入数字" value="{{pwdVal}}"></input> 
+              <view class='pwd_item'>
+              </view>
+          </view>
+          <button type="primary"  catchtap='hidePayLayer' data-account="{{pwdVal}}" class="account_btn"><text>提交</text></button>
+          <input class='input_control'  type='number' focus='{{payFocus}}' bindinput='inputPwd' />
+      </view>
+    </view>
+</view>

@@ -1,0 +1,63 @@
+.address_item{
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: var(--themeColor) 1rpx solid;
+}
+.address_item .address_name_phone{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.address_item .address_name_phone .address_name{
+  padding-right: 50rpx;
+} 
+.title{
+  padding: 20rpx 10rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  border-bottom: var(--themeColor) 1rpx solid;
+}
+
+.order_top{
+  font-size: 32rpx;
+  display: flex;
+  margin:10rpx 5rpx;
+  border-bottom: 1rpx solid rgb(206, 204, 204);
+}
+.order_top .order_oid{
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+}
+.order_top .order_time{
+  flex: 1;
+  text-align: right;
+}
+.order_detail{
+  display: flex;
+  border-bottom: solid 1rpx #ccc;
+}
+.order_detail .detail_left{
+  flex: 1;
+}
+.order_detail .detail_left image{
+  width: 150rpx;
+}
+.order_detail .detail_right{
+  flex: 5;
+}
+.order_detail .detail_right .right_top{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.order_detail .detail_right .right_bottom{
+  margin-top: 20rpx;
+}
+
+.order_bottom{
+  font-size: 32rpx;
+  text-align: right;
+  color: red;
+  padding: 5rpx;
+}

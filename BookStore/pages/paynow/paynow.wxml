@@ -1,0 +1,82 @@
+<!-- 收货地址 -->
+<view class="revice_address_row">
+  <navigator url="/pages/address/address">
+    <!-- 当收货地址不存在    显示按钮    对象即使是空对象bool类型也为true  -->
+    <view class="address_btn" wx:if="{{!address.aid}}">
+      <button type="primary" plain>选择收货地址</button>
+    </view>
+
+    <!-- 当收货地址存在   显示详细信息 -->
+    <view wx:else class="address_item">  
+      <view class="address_content">
+      <view class="address_name_phone">
+        <view class="address_name">{{address.aname}}</view>
+        <view class="address_phone">{{address.phone}}</view>
+      </view>
+      <view class="address_detail">
+        {{address.school + address.building + address.detail}}
+      </view>
+    </view>
+  </view>
+  </navigator>
+</view>
+
+<!-- 购物车内容 -->
+<view class="cart_content">
+  <view class="cart_title"> 购物车 </view>
+  <view class="cart_main">
+    <view class="cart_item">
+      <!-- 商品图片 -->
+      <navigator class="cart_img_wrap"> 
+        <image mode="widthFix" src="{{book.bsrc?book.bsrc:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587315090794&di=dca2cc16baec4d49be94ea434b520f53&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F83025aafa40f4bfb8cc6d324004f78f0f73618af.jpg'}}"></image>
+      </navigator>
+      <!-- 商品信息 -->
+      <view class="cart_info_wrap">
+        <view class="goods_name">{{book.bname}}</view>
+        <view class="goods_price_wrap">
+          <view class="goods_price">￥{{book.bprice}}</view>
+          <view class="cart_num_tool">
+            <view class="goods_num">X 1</view>
+          </view>
+        </view>
+      </view>
+  </view>
+  </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+
+  <!-- 总价格 -->
+  <view class="total_price_wrap">
+    <view class="total_price">
+      合计： <text class="total_price_text">{{book.bprice}}</text>
+    </view>
+    <view>包含运费</view>
+  </view>
+
+  <!-- 支付 -->
+  <view class="order_pay_wrap"> 
+    <view catchtap='showInputLayer' class="btn_pay">立即支付</view>
+  </view>
+</view>
+
+
+<!-- 密码输入框 -->
+<view wx:if='{{showPayPwdInput}}'>
+    <view class='bg_layer'></view>
+    <view class='input_main'>
+        <view class='input_title'>
+            <view class='input_back' catchtap='hidePayLayer'><text></text></view>
+            <text>输入支付密码</text>
+        </view>
+        <view class='input_tip'><text>使用会员卡余额支付需要验证身份，验证通过后才可进行支付。</text></view>
+        <view class='input_row' catchtap='getFocus'>
+            <view class='pwd_item' wx:for='{{6}}' wx:key='item' wx:for-index='i'>
+                <text wx:if='{{pwdVal.length>i}}'></text>
+            </view>
+        </view>
+        <view class='forget_pwd' catchtap='hidePayLayer'>忘记密码</view>
+        <input class='input_control' password type='number' focus='{{payFocus}}' bindinput='inputPwd' maxlength='6'/>
+    </view>
+</view>

@@ -1,0 +1,29 @@
+<view class="address_detail">
+  <form bindsubmit="handleAddress">
+    <view class="before_input">
+      <view class="input_text"> 收货人：</view>
+      <input name="aname" type="text" value="{{address_detail.aname}}"></input>
+    </view> 
+    <view class="before_input">
+      <view class="input_text" >号 码 ： </view>
+      <input name="phone" type="text" value="{{address_detail.phone}}"></input>
+    </view> 
+    <view class="before_input">
+      <view class="input_text" >学 校 ： </view>
+      <input name="school" type="text" value="{{address_detail.school}}"></input>
+    </view> 
+    <view class="before_input">
+      <view class="input_text" >楼 栋 ： </view>
+      <input name="building" type="text" value="{{address_detail.building}}"></input>
+    </view> 
+    <view class="before_input">
+      <view class="input_text" >房间号 ： </view>
+      <input name="num" type="text" value="{{address_detail.num}}"></input>
+    </view> 
+    <view class="before_input">
+      <view class="input_text" >详 细 ： </view>
+      <input name="detail" type="text" value="{{address_detail.detail}}"></input>
+    </view> 
+  <button form-type="submit" type="primary">提交</button>
+  </form>
+</view>

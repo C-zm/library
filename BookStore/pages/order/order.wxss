@@ -1,0 +1,53 @@
+page{
+  background-color:#f4f4f4;
+}
+.order_page{
+  margin: 15rpx;
+
+}
+.order_page .order_list{
+  padding: 10rpx;
+  border: 1rpx solid #ccc;
+  margin-bottom: 20rpx;
+  background-color: white;
+}
+
+.order_page .order_list .order_top{
+  display: flex;
+  margin: 5rpx;
+  border-bottom: 1rpx solid rgb(206, 204, 204);
+}
+.order_page .order_list .order_top .order_oid{
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+}
+.order_page .order_list .order_top .order_time{
+  flex: 1;
+  text-align: right;
+}
+.order_page .order_list  .order_detail{
+  display: flex;
+  border-bottom: solid 1rpx #ccc;
+}
+.order_page .order_list  .order_detail .detail_left{
+  flex: 1;
+}
+.order_page .order_list  .order_detail .detail_left image{
+  width: 100rpx;
+}
+  .order_page .order_list  .order_detail .detail_right{
+  flex: 5;
+}
+.order_page .order_list  .order_detail .detail_right .right_top{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.order_page .order_list .order_bottom{
+  text-align: right;
+  color: red;
+  padding: 5rpx;
+}

@@ -1,0 +1,56 @@
+page{
+  background-color:#f4f4f4;
+}
+.address{
+  margin-left: 5%;
+  width: 90%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;  
+  margin-bottom: 180rpx;
+}
+.address .address_item{
+  display: flex;
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+  background-color: #fff;
+  border: solid 1rpx blur;
+  padding: 15rpx 15rpx;
+  font: 28rpx;
+  color: rgb(75, 74, 74);
+  box-shadow: 0 20rpx 20rpx -20rpx gray;
+}
+.address .address_item .address_name_phone{
+  display: flex;
+}
+ .active{
+  border: 2rpx solid var(--themeColor);
+}
+.address .address_item .address_name_phone .address_name{
+  padding-right: 30rpx;
+}
+.address .address_content{
+  flex: 8;
+}
+.address .address_picture{
+  flex: 1;
+}
+
+
+.add_address{
+  align-items: center;
+  justify-content: center;
+  border-top: 1rpx solid #ccc;
+  position: fixed;
+  left: 0;
+  margin-left: 5%;
+  margin-bottom: 90rpx;
+  bottom: 0;
+  width: 90%;
+  height: 90rpx;
+  background-color: var(--themeColor);
+  display: flex;
+  font-size: 36rpx;
+  font-weight: 600;
+
+}

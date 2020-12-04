@@ -1,0 +1,21 @@
+<view class="address">
+  <view class="address_item {{item.isuse?'active':''}}" wx:for="{{address}}" wx:key="aid">
+    <view class="address_content" bindtap="clickAddress"  bindtouchstart="start" bindtouchend="end" data-aid="{{item.aid}}">
+      <view class="address_name_phone">
+        <view class="address_name">{{item.aname}}</view>
+        <view class="address_phone">{{item.phone}}</view>
+      </view>
+      <view class="address_detail">
+        {{item.school + item.building + item.detail}}
+      </view>
+    </view>
+    <navigator url="/pages/address_detail/address_detail?aid={{item.aid}}">
+      <text class="iconfont icon-bianxie address_picture" > </text>
+    </navigator>
+  </view>
+</view> 
+
+<navigator url="/pages/address_detail/address_detail">
+  <view class="add_address">新增</view>
+</navigator>
+<!-- bindtap="handleChangeAddress" data-id="{{item.aid}}" -->

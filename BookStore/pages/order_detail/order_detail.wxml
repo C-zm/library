@@ -1,0 +1,29 @@
+ 
+<view class="address_item">  
+  <view class="address_name_phone">
+    <view class="address_name">{{address.aname}}</view>
+    <view class="address_phone">{{address.phone}}</view>
+  </view>
+  <view class="address_detail">
+    {{address.school + address.building + address.detail}}
+  </view>
+</view> 
+<view class="title">订单详细</view>
+
+<view> 
+    <view class="order_top"> 
+      <view class="order_oid">编号：{{order_detail.oid}}</view>
+      <view class="order_time">{{order_detail.otime}}</view>
+    </view>
+    <view class="order_detail" wx:for="{{order_detail.orderDetail}}" wx:key="index" >
+      <view class="detail_left"><image src="{{item.bsrc}}" mode="widthFix"></image></view>
+      <view class="detail_right">
+        <view class="right_top">{{item.bname}}</view>
+        <view class="right_bottom">
+          X{{item.num}}   ￥{{item.bprice}} {{item.state}}
+        </view>
+      </view>
+    </view>
+    <view class="order_bottom">总价：{{order_detail.totalprice}}</view>
+ 
+</view>

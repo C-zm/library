@@ -1,0 +1,192 @@
+page{
+  padding-bottom: 90rpx;
+}
+.detail_swiper swiper{
+  height: 80vw;
+  text-align: center;
+}
+.detail_swiper swiper image{
+  width: 90%;
+}
+.b_p_i{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.bprice{
+  flex: 1;
+  color: var(--themeColor);
+  font-size: 32rpx;
+  padding: 15rpx;
+  font-weight: 600;
+}
+.inventory{
+  flex: 1;
+  text-align: right;
+  padding-right: 20rpx;
+  
+}
+.bname_row{
+  display: flex;
+  padding: 10rpx 0;
+  border-top: 5rpx solid #dedede;
+  border-bottom: 5rpx solid #dedede;
+}
+.bname_row .bname{
+  padding: 0 10rpx;
+  flex: 5;
+  font-size: 30rpx;
+  color: #000;
+
+  /* 让字的时候显示... */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.bname_row .book_collect{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-left: 2rpx solid #000;
+}
+.icon-shoucang1{
+  color: orangered;
+}
+.book_info{
+  margin-left: 1%;
+  width: 98%;
+}
+.book_info .book_info_title{
+  font-size: 40rpx;
+  font-weight: 600;
+  padding: 20rpx;
+  color: var(--themeColor);
+}
+.btm_tool{
+  border-top: 1rpx solid #ccc;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+}
+.btm_tool .tool_item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  position: relative;
+}
+.btm_tool .tool_item button{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.btm_tool .btn_cart{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffa500;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.btm_tool .btn_buy{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7564e;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.author{
+  padding: 15rpx;
+  size: 28rpx;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+.time{
+  padding: 15rpx;
+  size: 28rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.introduce{
+  padding: 15rpx;
+  size: 28rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.comment_info{
+  margin-left: 1%;
+  width: 98%; 
+}
+.comment_info .comment_info_title{
+  font-size: 40rpx;
+  font-weight: 600;
+  padding: 20rpx;
+  color: var(--themeColor);
+  border-bottom: 1rpx solid #ccc;
+}
+.wu{
+  font-size: 40rpx;
+  color: #ccc;
+  text-align: center;
+  align-items: center;
+ justify-content: center;
+}
+.comment_list{
+  display: flex;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #ccc;
+
+}
+.comment_list .comment_left{
+  flex: 1;
+}
+.comment_list .comment_left image{
+  width: 90%;
+}
+
+.comment_list .comment_right{
+  flex: 6;
+}
+.comment_list .comment_right .right_top{
+  display: flex;
+}
+.comment_list .comment_right .right_top .uname{
+  flex: 1;
+  text-align: left;
+}
+.comment_list .comment_right .right_top .ctime{
+  flex: 1;
+  text-align: right;
+}
+.csrc_list{
+  display: flex; 
+  flex-wrap: wrap;
+}
+.detail_src{
+  display: flex;
+  width:30%;
+  padding: 2%;
+} 
+.detail_src image{
+  width: 100%;
+}
+
+.address_detail form button{
+  margin-top: 50rpx;
+}

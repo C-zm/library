@@ -1,0 +1,22 @@
+.address_detail{
+  width: 90%;
+  margin-left: 5%;
+}
+.address_detail .before_input{
+  display: flex;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  align-items: center;
+}
+.address_detail .before_input .input_text{
+  flex: 1;
+}
+.address_detail .before_input input{
+  flex: 4;
+  border: solid #ccc 1rpx;
+  padding-left: 5%;
+  box-shadow: 0 20rpx 20rpx -20rpx gray;
+}
+.address_detail form button{
+  margin:40rpx;
+}

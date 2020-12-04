@@ -1,0 +1,19 @@
+<Tabs class="tabs" tabs="{{tabs}}" bindtabsItemChange="handelTabsItemChange"></Tabs>
+<view class="order_page">
+  <navigator url="/pages/order_detail/order_detail?oid={{item1.oid}}" class="order_list" wx:for="{{orderList}}" wx:key="index" wx:for-item="item1">
+    <view class="order_top"> 
+      <view class="order_oid">编号：{{item1.oid}}</view>
+      <view class="order_time">{{item1.otime}}</view>
+    </view>
+    <view class="order_detail" wx:for="{{item1.orderDetail}}" wx:key="index" wx:for-item="item2" >
+      <view class="detail_left"><image src="{{item2.bsrc}}" mode="widthFix"></image></view>
+      <view class="detail_right">
+        <view class="right_top">{{item2.bname}}</view>
+        <view class="right_bottom">
+          X{{item2.num}}   ￥{{item2.bprice}} {{item2.state}}
+        </view>
+      </view>
+    </view>
+    <view class="order_bottom">总价：{{item1.totalprice}}</view>
+  </navigator> 
+</view>
